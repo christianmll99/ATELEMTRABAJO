@@ -49,4 +49,13 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.612"
         app:srcCompat="@drawable/vaqueros2rec" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="Juego"
+        android:text="EMPIEZA"
+        tools:layout_editor_absoluteX="183dp"
+        tools:layout_editor_absoluteY="613dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
