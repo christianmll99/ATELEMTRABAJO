@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">ATELEMTRABAJO</string>
+    <string name="nom1">Escribe el nombre del  Jugador 1</string>
+
 </resources>
