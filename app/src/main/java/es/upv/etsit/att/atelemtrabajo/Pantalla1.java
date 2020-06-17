@@ -13,7 +13,8 @@ public class Pantalla1 extends AppCompatActivity {
     private TextView tv3;
     private TextView tv4;
     private TextView tv5;
-    private Button button;
+    protected static String nombrereal = " ";
+    protected static String nombrereal2 = " ";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,13 +25,20 @@ public class Pantalla1 extends AppCompatActivity {
         tv3 = (TextView) findViewById(R.id.tv3);
         tv4 = (TextView) findViewById(R.id.tv4);
         tv5 = (TextView) findViewById(R.id.tv5);
-        button = (Button) findViewById(R.id.button);
 
 
         String nombre11 = getIntent().getStringExtra("nombre1");
         String nombre22 = getIntent().getStringExtra("nombre2");
+         nombrereal = nombre11;
+         nombrereal2 = nombre22;
         tv1.setText(nombre11);
         tv2.setText(nombre22);
+
+
+
+    }
+
+
 
 
         public void Juego (View v){
@@ -46,27 +54,27 @@ public class Pantalla1 extends AppCompatActivity {
                 P.disparar();
                 if (contador % 2 != 0) {
                     // enseñar por pantalla Jugador 1 sobrevive
-                    tv4.setText(nombre11 + "sobrevive");
+                    tv4.setText(nombrereal + " sobrevive ");
                 } else {
                     //print que jugador 2 sobrevive
-                    tv5.setText(nombre22 + "sobrevive");
+                    tv5.setText(nombrereal2 + " sobrevive ");
                 }
                 contador++;
 
 
-            } while (muere == false);
+            } while (muere == false);//muere == false
             if (contador % 2 != 0) {
                 // enseñar por pantalla Jugador 1 muere
-                tv4.setText(nombre11 + "muere");
+                tv4.setText(nombrereal + " muere");
             } else {
                 //print que jugador 2 muere
-                tv5.setText(nombre22 + "muere");
+                tv5.setText(nombrereal2 + " muere");
             }
 
         }
 
     }
-}
+
 
 
 
