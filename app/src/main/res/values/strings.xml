@@ -4,5 +4,7 @@
     <string name="empezar">EMPIEZA</string>
     <string name="ina" />
     <string name="Jugar">Jugar</string>
+    <string name="ReinicioNombres">Volver a jugar con los mismos personajes</string>
+    <string name="REINICIOTOTAL">Jugar con otros jugadores</string>
 
 </resources>

@@ -41,6 +41,13 @@ public class Pantalla1 extends AppCompatActivity {
 
     }
 
+    public void salto(View view){
+        Intent siguiente2 = new Intent(this, PantallaFinal.class);
+        siguiente2.putExtra("nombre11", nombrereal.toString());
+        siguiente2.putExtra("nombre22", nombrereal2.toString());
+        startActivity(siguiente2);
+    }
+
 
     public class Pistola {
         private int posicionDisparo;
