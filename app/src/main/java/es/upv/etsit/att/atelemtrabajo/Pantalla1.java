@@ -3,9 +3,11 @@ package es.upv.etsit.att.atelemtrabajo;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.net.IpSecManager;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
-import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class Pantalla1 extends AppCompatActivity {
@@ -14,6 +16,7 @@ public class Pantalla1 extends AppCompatActivity {
     private TextView tv3;
     private TextView tv4;
     private TextView tv5;
+    private ImageView imagen;
     protected static String nombrereal = " ";
     protected static String nombrereal2 = " ";
     boolean muere = false;
@@ -29,6 +32,7 @@ public class Pantalla1 extends AppCompatActivity {
         tv3 = (TextView) findViewById(R.id.tv3);
         tv4 = (TextView) findViewById(R.id.tv4);
         tv5 = (TextView) findViewById(R.id.tv5);
+        imagen = (ImageView) findViewById(R.id.imagenxml);
 
 
         String nombre11 = getIntent().getStringExtra("nombre1");
@@ -40,12 +44,14 @@ public class Pantalla1 extends AppCompatActivity {
 
 
     }
+    public void saltopantallafinal(View view){
+        Intent siguiente = new Intent(Pantalla1.this, PantallaFinal.class);
+        siguiente.putExtra("nombre11", nombrereal);
+        siguiente.putExtra("nombre22", nombrereal2);
+        startActivity(siguiente);
 
-    public void salto(View view){
-        Intent siguiente2 = new Intent(this, PantallaFinal.class);
-        siguiente2.putExtra("nombre11", nombrereal.toString());
-        siguiente2.putExtra("nombre22", nombrereal2.toString());
-        startActivity(siguiente2);
+
+
     }
 
 
@@ -53,7 +59,7 @@ public class Pantalla1 extends AppCompatActivity {
         private int posicionDisparo;
         private int posicionBala;
 
-        public void revolver() {
+        Pistola() {
             posicionBala = (int) Math.floor(Math.random() * 6 + 1);
             posicionDisparo = (int) Math.floor(Math.random() * 6 + 1);
         } //En este método es como si pusieramos las balas y eligieramos la posición del primer tiro
@@ -74,37 +80,61 @@ public class Pantalla1 extends AppCompatActivity {
             actualizaBala(); //Pasamos a la siguiente espacio de bala de la pistola
             return muere;
         }
-    }
+    }  // classs Pistola1
 
 
     public void Juego(View v) {
-        Pistola P = new Pistola();
-
-        do {
-            if (contador % 2 != 0) { //contador impar,actualizamos ronda
-                tv3.setText(" Ronda : " + ronda);//mostramos ronda
-                ronda++; // para la proxima ronda
-            }
-
-            P.disparar();
-            if (contador % 2 != 0) {
-                // enseñar por pantalla Jugador 1 sobrevive
-                tv4.setText(nombrereal + " sobrevive ");
-            } else {
-                //print que jugador 2 sobrevive
-                tv5.setText(nombrereal2 + " sobrevive ");
-            }
-            contador++;
+        final Pistola P = new Pistola();
 
 
-        } while (muere == false);//muere == false
-        if (contador % 2 != 0) {
-            // enseñar por pantalla Jugador 1 muere
-            tv4.setText(nombrereal + " muere");
-        } else {
-            //print que jugador 2 muere
-            tv5.setText(nombrereal2 + " muere");
-        }
-//Meter pagina 3 con resultado final y ganador
-    }
-}
+        final Handler handler2 = new Handler();
+
+        handler2.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                tv4.setText(nombrereal);
+                tv5.setText(nombrereal2);
+
+                if (contador % 2 != 0) { //contador impar,actualizamos ronda
+                    tv3.setText(" Ronda : " + ronda);//mostramos ronda
+                    ronda++; // para la proxima ronda
+                }
+
+                P.disparar();
+                if (contador % 2 != 0) {
+                    // enseñar por pantalla Jugador 1 sobrevive
+                    if (!muere) {
+                        tv4.setText(nombrereal + " sobrevive ");
+                    } else  {
+                        tv4.setText(nombrereal + " muere");
+                    }
+                } else {
+                    //print que jugador 2 sobrevive
+                    if (!muere) {
+                        tv5.setText(nombrereal2 + " sobrevive ");
+                    }else  {
+                        tv5.setText(nombrereal2 + " muere");
+                    }
+                }
+                contador++;
+
+                if (!muere) {
+                    handler2.postDelayed(this, 3000);
+                } else  {
+                    handler2.postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+
+                            saltopantallafinal(null);
+                        }
+                    }, 3000);
+                } // else
+
+
+            } // run
+        },100);
+
+
+    } // Juego
+
+}  // Pantalla1.class

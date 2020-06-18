@@ -10,9 +10,9 @@
         android:id="@+id/tv1"
         android:layout_width="115dp"
         android:layout_height="67dp"
-        android:layout_marginTop="56dp"
+        android:layout_marginTop="76dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.094"
+        app:layout_constraintHorizontal_bias="0.078"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -20,48 +20,48 @@
         android:id="@+id/tv2"
         android:layout_width="122dp"
         android:layout_height="65dp"
-        android:layout_marginTop="52dp"
+        android:layout_marginTop="76dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.919"
+        app:layout_constraintHorizontal_bias="0.873"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="84dp"
-        android:layout_height="203dp"
+        android:id="@+id/imagenxml"
+        android:layout_width="106dp"
+        android:layout_height="231dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/imageView2"
-        app:layout_constraintHorizontal_bias="0.341"
+        app:layout_constraintHorizontal_bias="0.301"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.603"
+        app:layout_constraintVertical_bias="0.725"
         app:srcCompat="@drawable/vaqueros1rec" />
 
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="101dp"
         android:layout_height="212dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.612"
+        app:layout_constraintVertical_bias="0.713"
         app:srcCompat="@drawable/vaqueros2rec" />
 
     <Button
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="salto"
+        android:onClick="Juego"
         android:text="@string/empezar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.456"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.849" />
+        app:layout_constraintVertical_bias="0.967" />
 
     <TextView
         android:id="@+id/tv3"
@@ -76,18 +76,18 @@
         android:id="@+id/tv4"
         android:layout_width="115dp"
         android:layout_height="34dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginLeft="28dp"
-        android:layout_marginBottom="20dp"
-        app:layout_constraintBottom_toTopOf="@+id/imageView"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/imagenxml"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/tv5"
         android:layout_width="111dp"
         android:layout_height="34dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginRight="24dp"
         android:layout_marginBottom="16dp"
         app:layout_constraintBottom_toTopOf="@+id/imageView2"
         app:layout_constraintEnd_toEndOf="parent" />
