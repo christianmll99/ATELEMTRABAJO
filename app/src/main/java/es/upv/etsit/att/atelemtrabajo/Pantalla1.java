@@ -48,6 +48,9 @@ public class Pantalla1 extends AppCompatActivity {
         Intent siguiente = new Intent(Pantalla1.this, PantallaFinal.class);
         siguiente.putExtra("nombre11", nombrereal);
         siguiente.putExtra("nombre22", nombrereal2);
+        siguiente.putExtra("contador", contador);
+
+
         startActivity(siguiente);
 
 

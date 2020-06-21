@@ -10,10 +10,11 @@
         android:id="@+id/button2"
         android:layout_width="346dp"
         android:layout_height="42dp"
-        android:layout_marginTop="132dp"
+        android:layout_marginTop="364dp"
         android:onClick="reinicioconnombres"
         android:text="@string/ReinicioNombres"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -21,7 +22,7 @@
         android:id="@+id/button3"
         android:layout_width="240dp"
         android:layout_height="43dp"
-        android:layout_marginTop="228dp"
+        android:layout_marginTop="428dp"
         android:onClick="reinicio"
         android:text="@string/REINICIOTOTAL"
         app:layout_constraintEnd_toEndOf="parent"
@@ -30,12 +31,12 @@
 
     <TextView
         android:id="@+id/tv8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="324dp"
+        android:layout_width="129dp"
+        android:layout_height="33dp"
+        android:layout_marginTop="40dp"
         android:text="TextView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.675"
+        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -45,10 +46,9 @@
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.071"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv8"
-        app:layout_constraintVertical_bias="1.0"
+        app:layout_constraintVertical_bias="0.178"
         app:srcCompat="@drawable/vaqueros1rec" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
